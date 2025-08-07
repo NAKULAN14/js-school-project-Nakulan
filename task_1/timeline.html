@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timeline of Computer Development - Nakulan JS</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #171717;
+      color: #ededed;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5em 2em 1em 2em;
+      border-bottom: 2px solid #ccc;
+      background: linear-gradient(90deg, #f8fafc, #ececec 80%);
+    }
+    body.dark header {
+      background: linear-gradient(90deg, #171818, #222226 80%);
+      border-bottom: 2px solid #333;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 2em;
+      padding: 0.25em 0.8em;
+      border-radius: 10px;
+      border: 2px solid #5a5a5a;
+      background: #fff;
+      letter-spacing: 2px;
+    }
+    body.dark .logo {
+      background: #171717;
+      color: #f0e130;
+      border: 2px solid #f0e130;
+    }
+    .theme-toggle {
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      border-radius:8px;
+      padding:0.3em 0.8em;
+    }
+    .theme-toggle input[type="checkbox"] {
+      width: 1.1em;
+      height: 1.1em;
+      accent-color: #222;
+      cursor: pointer;
+    }
+    body.dark .theme-toggle input[type="checkbox"] {
+      accent-color: #f0e130;
+    }
+    nav {
+      margin: 2em 0 0 0;
+      padding: 1em 2em;
+      background: #f5f5f5;
+      border-bottom: 1px dashed #aaa;
+    }
+    body.dark nav {
+      background: #242627;
+      border-bottom: 1px dashed #303243;
+    }
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 0 2em;
+    }
+    #timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+    article {
+      padding: 1.2em;
+      border-left: 5px solid #f0e130;
+      background: #fafafa;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(210,210,210,0.11);
+      position: relative;
+    }
+    article h2 {
+      margin: 0 0 0.4em 0;
+    }
+    body.dark article {
+      background: #212124;
+      border-left: 5px solid #f0e130;
+      box-shadow: 0 2px 9px rgba(44,44,44,0.24);
+    }
+    article::before {
+      content: "";
+      position: absolute;
+      left: -1.75em;
+      top: 1.2em;
+      width: 16px;
+      height: 16px;
+      background: #f0e130;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 7px #0003;
+    }
+    figure {
+      margin: 0.5em 0 0 0;
+    }
+    figure img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 6px;
+      margin-bottom: 0.5em;
+      background: #e7e7e7;
+    }
+    body.dark figure img {
+      background: #2c2c2c;
+    }
+    figcaption {
+      font-size: 1em;
+      color: #7d7900;
+      font-style: italic;
+    }
+    body.dark figcaption {
+      color: #ebd327;
+    }
+    #modal {
+      display: none; /* placeholder for future pop-up */
+    }
+
+
+    @media (max-width: 700px) {
+      main { padding: 0 0.3em; }
+      header { flex-direction: column; gap: 1em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="Nakulan JS Logo">Nakulan JS</div>
+    <label class="theme-toggle">
+      <input type="checkbox" id="toggleTheme" aria-label="Toggle Dark Theme"
+        onclick="document.body.classList.toggle('dark')">
+      Theme: <span>Black / White</span>
+    </label>
+  </header>
+
+
+  <nav>
+    <strong>Filters:</strong> <em>Coming soon — search, tags, sort, etc.</em>
+  </nav>
+  
+  <main>
+    <section id="timeline">
+      <article>
+        <h2>1940s: ENIAC</h2>
+        <figure>
+          <img src="eniac.jpg" alt="ENIAC - First electronic digital computer">
+          <figcaption>
+            The ENIAC was the world’s first general-purpose electronic digital computer, used by the U.S. Army for artillery trajectory calculations.
+          </figcaption>
+        </figure>
+      </article>
+      <article>
+        <h2>1951: UNIVAC I</h2>
+        <figure>
+          <img src="univac.jpg" alt="UNIVAC I mainframe">
+          <figcaption>
+            The UNIVAC I was the first commercially produced electronic computer in the United States.
+          </figcaption>
+        </figure>
+      </article>
+      <article>
+        <h2>1953: IBM 701</h2>
+        <figure>
+          <img src="ibm701.jpg" alt="IBM 701 Computer">
+          <figcaption>
+            The IBM 701, IBM’s first mass-produced scientific computer, marked the company’s entry into electronic computing.
+          </figcaption>
+        </figure>
+      </article>
+      <article>
+        <h2>1976: Apple I</h2>
+        <figure>
+          <img src="apple 1.jpg" alt="Apple I computer with keyboard">
+          <figcaption>
+            The Apple I, hand-built by Steve Wozniak and sold by Steve Jobs, sparked the personal computing wave.
+          </figcaption>
+        </figure>
+      </article>
+      <article>
+        <h2>1981: IBM PC (5150)</h2>
+        <figure>
+          <img src="ibm 5150.jpg" alt="IBM PC 5150">
+          <figcaption>
+            The IBM PC 5150 set the industry standard for home and business desktop computers.
+          </figcaption>
+        </figure>
+      </article>
+      <article>
+        <h2>1984: Macintosh</h2>
+        <figure>
+          <img src="macintosh.jpg" alt="Apple Macintosh 128k">
+          <figcaption>
+            Apple’s first Macintosh popularized the graphical user interface (GUI) for home computers.
+          </figcaption>
+        </figure>
+      </article>
+      <article>
+        <h2>2007: Apple iPhone</h2>
+        <figure>
+          <img src="iphone.png" alt="First Generation iPhone">
+          <figcaption>
+            The original iPhone revolutionized mobile computing and ignited the smartphone era.
+          </figcaption>
+        </figure>
+      </article>
+    </section>
+    <div id="modal"></div>
+  </main>
+  <script>
+    // Optional: Preserve theme between page reloads
+    const themeToggle = document.getElementById('toggleTheme');
+    themeToggle.addEventListener('change', () => {
+      if(themeToggle.checked) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+      localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+    });
+    // On page load, set theme from storage
+    if(localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      themeToggle.checked = true;
+    }
+  </script>
+</body>
+</html>
