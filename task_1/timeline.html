@@ -12,10 +12,7 @@
       color: #1a1a1a;
       transition: background 0.3s, color 0.3s;
     }
-    body.dark {
-      background: #171717;
-      color: #ededed;
-    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -23,10 +20,6 @@
       padding: 1.5em 2em 1em 2em;
       border-bottom: 2px solid #ccc;
       background: linear-gradient(90deg, #f8fafc, #ececec 80%);
-    }
-    body.dark header {
-      background: linear-gradient(90deg, #171818, #222226 80%);
-      border-bottom: 2px solid #333;
     }
     .logo {
       font-weight: bold;
@@ -36,11 +29,6 @@
       border: 2px solid #5a5a5a;
       background: #fff;
       letter-spacing: 2px;
-    }
-    body.dark .logo {
-      background: #171717;
-      color: #f0e130;
-      border: 2px solid #f0e130;
     }
     .theme-toggle {
       font-size: 1em;
@@ -56,18 +44,11 @@
       accent-color: #222;
       cursor: pointer;
     }
-    body.dark .theme-toggle input[type="checkbox"] {
-      accent-color: #f0e130;
-    }
     nav {
       margin: 2em 0 0 0;
       padding: 1em 2em;
       background: #f5f5f5;
       border-bottom: 1px dashed #aaa;
-    }
-    body.dark nav {
-      background: #242627;
-      border-bottom: 1px dashed #303243;
     }
     main {
       max-width: 900px;
@@ -89,11 +70,6 @@
     }
     article h2 {
       margin: 0 0 0.4em 0;
-    }
-    body.dark article {
-      background: #212124;
-      border-left: 5px solid #f0e130;
-      box-shadow: 0 2px 9px rgba(44,44,44,0.24);
     }
     article::before {
       content: "";
@@ -117,22 +93,14 @@
       margin-bottom: 0.5em;
       background: #e7e7e7;
     }
-    body.dark figure img {
-      background: #2c2c2c;
-    }
     figcaption {
       font-size: 1em;
       color: #7d7900;
       font-style: italic;
     }
-    body.dark figcaption {
-      color: #ebd327;
-    }
     #modal {
       display: none; /* placeholder for future pop-up */
     }
-
-
     @media (max-width: 700px) {
       main { padding: 0 0.3em; }
       header { flex-direction: column; gap: 1em; }
@@ -143,12 +111,10 @@
   <header>
     <div class="logo" aria-label="Nakulan JS Logo">Nakulan JS</div>
     <label class="theme-toggle">
-      <input type="checkbox" id="toggleTheme" aria-label="Toggle Dark Theme"
-        onclick="document.body.classList.toggle('dark')">
+      <input type="checkbox" id="toggleTheme" aria-label="Toggle Dark Theme">
       Theme: <span>Black / White</span>
     </label>
   </header>
-
 
   <nav>
     <strong>Filters:</strong> <em>Coming soon — search, tags, sort, etc.</em>
@@ -222,22 +188,7 @@
     </section>
     <div id="modal"></div>
   </main>
-  <script>
-    // Optional: Preserve theme between page reloads
-    const themeToggle = document.getElementById('toggleTheme');
-    themeToggle.addEventListener('change', () => {
-      if(themeToggle.checked) {
-        document.body.classList.add('dark');
-      } else {
-        document.body.classList.remove('dark');
-      }
-      localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
-    });
-    // On page load, set theme from storage
-    if(localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      themeToggle.checked = true;
-    }
-  </script>
+
+
 </body>
 </html>
