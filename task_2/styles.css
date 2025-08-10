@@ -1,0 +1,196 @@
+/* --------------------
+   Base Styles & Reset
+-------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* --------------------
+   Theme Variables
+-------------------- */
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --header-bg: linear-gradient(90deg, #f8fafc, #ececec 80%);
+  --border: #ccc;
+  --timeline-line: #f0e130;
+  --marker-bg: #f0e130;
+  --caption: #7d7900;
+}
+
+:root:has(#toggleTheme:checked) {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --header-bg: linear-gradient(90deg, #1e1e1e, #2b2b2b 80%);
+  --border: #444;
+  --timeline-line: #ffcc00;
+  --marker-bg: #ffcc00;
+  --caption: #e0cd70;
+}
+
+/* --------------------
+   Header
+-------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 2em 1em;
+  border-bottom: 2px solid var(--border);
+  background: var(--header-bg);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2em;
+  padding: 0.25em 0.8em;
+  border-radius: 10px;
+  border: 2px solid #5a5a5a;
+  background: var(--bg);
+  letter-spacing: 2px;
+}
+
+/* --------------------
+   Theme Toggle
+-------------------- */
+.theme-toggle {
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 8px;
+  padding: 0.3em 0.8em;
+  cursor: pointer;
+}
+
+.theme-toggle input[type="checkbox"] {
+  width: 1.1em;
+  height: 1.1em;
+  accent-color: var(--text);
+  cursor: pointer;
+}
+
+/* --------------------
+   Navigation
+-------------------- */
+nav {
+  margin-top: 1rem;
+  padding: 1em 2em;
+  background: rgba(0,0,0,0.03);
+  border-bottom: 1px dashed var(--border);
+}
+
+/* --------------------
+   Main & Timeline
+-------------------- */
+main {
+  max-width: 1100px;
+  margin: 2em auto;
+  padding: 0 2em;
+}
+
+#timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+
+article {
+  padding: 1.2em;
+  border-left: 5px solid var(--timeline-line);
+  background: rgba(240,240,240,0.6);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(210,210,210,0.11);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+:root:has(#toggleTheme:checked) article {
+  background: rgba(255,255,255,0.05);
+}
+
+article h2 {
+  margin-bottom: 0.4em;
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  left: -1.75em;
+  top: 1.2em;
+  width: 16px;
+  height: 16px;
+  background: var(--marker-bg);
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 7px rgba(0,0,0,0.3);
+}
+
+/* --------------------
+   Figures
+-------------------- */
+figure {
+  margin-top: 0.5em;
+}
+
+figure img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  background: #e7e7e7;
+}
+
+figcaption {
+  font-size: 1em;
+  color: var(--caption);
+  font-style: italic;
+}
+
+/* --------------------
+   Modal Placeholder
+-------------------- */
+#modal {
+  display: none;
+}
+
+/* --------------------
+   Responsive Layout
+-------------------- */
+
+/* Tablet (2-column timeline) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop (2-column with spacing) */
+@media (min-width: 1024px) {
+  #timeline {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5em;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  main {
+    padding: 0 1em;
+  }
+  header {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
