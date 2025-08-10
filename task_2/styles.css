@@ -1,24 +1,12 @@
-/* --------------------
-   Base Styles & Reset
--------------------- */
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  line-height: 1.5;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* --------------------
-   Theme Variables
--------------------- */
-:root {
   --bg: #ffffff;
   --text: #1a1a1a;
   --header-bg: linear-gradient(90deg, #f8fafc, #ececec 80%);
@@ -26,9 +14,18 @@ body {
   --timeline-line: #f0e130;
   --marker-bg: #f0e130;
   --caption: #7d7900;
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.5;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-:root:has(#toggleTheme:checked) {
+
+#toggleTheme:checked ~ header,
+#toggleTheme:checked ~ nav,
+#toggleTheme:checked ~ main {
   --bg: #121212;
   --text: #f0f0f0;
   --header-bg: linear-gradient(90deg, #1e1e1e, #2b2b2b 80%);
@@ -36,11 +33,11 @@ body {
   --timeline-line: #ffcc00;
   --marker-bg: #ffcc00;
   --caption: #e0cd70;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* --------------------
-   Header
--------------------- */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -61,9 +58,6 @@ header {
   letter-spacing: 2px;
 }
 
-/* --------------------
-   Theme Toggle
--------------------- */
 .theme-toggle {
   font-size: 1em;
   display: flex;
@@ -74,26 +68,14 @@ header {
   cursor: pointer;
 }
 
-.theme-toggle input[type="checkbox"] {
-  width: 1.1em;
-  height: 1.1em;
-  accent-color: var(--text);
-  cursor: pointer;
-}
 
-/* --------------------
-   Navigation
--------------------- */
 nav {
-  margin-top: 1rem;
   padding: 1em 2em;
   background: rgba(0,0,0,0.03);
   border-bottom: 1px dashed var(--border);
 }
 
-/* --------------------
-   Main & Timeline
--------------------- */
+
 main {
   max-width: 1100px;
   margin: 2em auto;
@@ -116,7 +98,7 @@ article {
   transition: background 0.3s ease;
 }
 
-:root:has(#toggleTheme:checked) article {
+#toggleTheme:checked ~ main article {
   background: rgba(255,255,255,0.05);
 }
 
@@ -137,9 +119,7 @@ article::before {
   box-shadow: 0 0 7px rgba(0,0,0,0.3);
 }
 
-/* --------------------
-   Figures
--------------------- */
+
 figure {
   margin-top: 0.5em;
 }
@@ -158,25 +138,17 @@ figcaption {
   font-style: italic;
 }
 
-/* --------------------
-   Modal Placeholder
--------------------- */
 #modal {
   display: none;
 }
 
-/* --------------------
-   Responsive Layout
--------------------- */
 
-/* Tablet (2-column timeline) */
 @media (min-width: 768px) and (max-width: 1023px) {
   #timeline {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* Desktop (2-column with spacing) */
 @media (min-width: 1024px) {
   #timeline {
     grid-template-columns: 1fr 1fr;
@@ -184,7 +156,6 @@ figcaption {
   }
 }
 
-/* Mobile adjustments */
 @media (max-width: 767px) {
   main {
     padding: 0 1em;
