@@ -1,0 +1,58 @@
+[
+  {
+    "year": 1940,
+    "title": "ENIAC",
+    "description": "The ENIAC was the world’s first general-purpose electronic digital computer, used by the U.S. Army for artillery trajectory calculations.",
+    "imageURL": "eniac.jpg",
+    "category": "Mainframe"
+  },
+  {
+    "year": 1951,
+    "title": "UNIVAC I",
+    "description": "The UNIVAC I was the first commercially produced electronic computer in the United States.",
+    "imageURL": "univac.jpg",
+    "category": "Mainframe"
+  },
+  {
+    "year": 1953,
+    "title": "IBM 701",
+    "description": "The IBM 701, IBM’s first mass-produced scientific computer, marked the company’s entry into electronic computing.",
+    "imageURL": "ibm701.jpg",
+    "category": "Scientific"
+  },
+  {
+    "year": 1976,
+    "title": "Apple I",
+    "description": "The Apple I, hand-built by Steve Wozniak and sold by Steve Jobs, sparked the personal computing wave.",
+    "imageURL": "apple 1.jpg",
+    "category": "Personal Computer"
+  },
+  {
+    "year": 1981,
+    "title": "IBM PC (5150)",
+    "description": "The IBM PC 5150 set the industry standard for home and business desktop computers.",
+    "imageURL": "ibm 5150.jpg",
+    "category": "Personal Computer"
+  },
+  {
+    "year": 1984,
+    "title": "Macintosh",
+    "description": "Apple’s first Macintosh popularized the graphical user interface (GUI) for home computers.",
+    "imageURL": "macintosh.jpg",
+    "category": "Personal Computer"
+  },
+  {
+    "year": 2007,
+    "title": "Apple iPhone",
+    "description": "The original iPhone revolutionized mobile computing and ignited the smartphone era.",
+    "imageURL": "iphone.png",
+    "category": "Mobile"
+  },
+  {
+    "year": 2010,
+    "title": "Apple iPad",
+    "description": "The iPad created a new market for tablet computing and broadened personal device use.",
+    "imageURL": "ipad.jpg",
+    "category": "Tablet"
+  }
+]
