@@ -1,0 +1,11 @@
+{
+  "name": "js-school-project-nakulan",
+  "version": "1.0.0",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
